@@ -28,7 +28,6 @@ main {
   border-bottom: 2px solid #517db1;
 }
 
-
 .navbar .navbar-brand {
   color: white;
   font-weight: 700;
@@ -36,13 +35,13 @@ main {
 }
 
 .navbar-brand-logo {
-  height: 60px; /* Adjust size as needed */
+  height: 60px;
   width: auto;
   margin-right: 10px;
 }
 
 .navbar-logo-right {
-  height: 60px; /* Adjust size as needed */
+  height: 60px;
   width: auto;
   margin-right: 10px;
 }
@@ -233,10 +232,9 @@ footer {
 }
 
 /* Product Details */
-
 .product-container {
   display: flex;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
 }
@@ -249,6 +247,8 @@ footer {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 300px;
 }
 
 .product-card:hover {
@@ -277,7 +277,7 @@ footer {
 }
 
 .product-description {
-  font-size: 2rem;
+  font-size: 1rem;
   color: #000000;
   line-height: 1.5;
 }
@@ -326,7 +326,7 @@ footer {
 .guide-section h2 {
   font-family: "Arial", sans-serif;
   font-size: 1.75rem;
-  color: #2c428b ;
+  color: #2c428b;
   margin-bottom: 1rem;
 }
 
@@ -350,15 +350,14 @@ footer {
 }
 
 .guide-section {
-  display: none; /* Hide all sections by default */
+  display: none;
 }
 
 .guide-section.active {
-  display: block; /* Only display the active section */
+  display: block;
 }
 
 /* About Us */
-
 .about-section {
   margin-top: 2rem;
   padding: 2rem;
@@ -407,7 +406,7 @@ footer {
 
 .mission-vision h2 {
   font-size: 1.75rem;
-  color: #ed1b24 ;
+  color: #ed1b24;
   margin-bottom: 1rem;
 }
 
@@ -419,7 +418,6 @@ footer {
 }
 
 /* Contact Us */
-
 .contact-section {
   margin-top: 2rem;
   padding: 2rem;
@@ -455,7 +453,7 @@ footer {
 
 .contact-form h3 {
   font-size: 1.5rem;
-  color: #ed1b24 ;
+  color: #ed1b24;
   margin-bottom: 1rem;
 }
 
@@ -464,7 +462,7 @@ footer {
 }
 
 .btn-submit {
-  background-color: #4995ed ;
+  background-color: #4995ed;
   color: white;
   font-weight: bold;
   transition: background-color 0.3s, transform 0.2s;
@@ -476,11 +474,10 @@ footer {
 }
 
 /* Download */
-
 .download-section {
-  margin-top: 3rem;
+  margin: 3rem auto;
   padding: 2rem;
-  width: 700px;
+  max-width: 700px;
   background-color: #f8f9fa;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -502,7 +499,8 @@ footer {
 
 .download-card {
   text-align: center;
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 1rem;
@@ -520,7 +518,7 @@ footer {
   max-width: 100px;
   height: auto;
   margin-bottom: 0.5rem;
-  object-fit: contain; /* Ensures the image fits nicely without distortion */
+  object-fit: contain;
 }
 
 .download-card a {
@@ -543,11 +541,10 @@ footer {
   background-color: #388e3c;
 }
 
-
 .download-stats {
-  margin-top: 2rem;
+  margin: 2rem auto;
   padding: 0.5rem;
-  width: 700px;
+  max-width: 700px;
   background-color: #f1f1f1;
   border-radius: 8px;
   text-align: center;
@@ -556,25 +553,21 @@ footer {
 
 .download-stats h2 {
   font-size: 1.5rem;
-  color: #ed1b24 ;
+  color: #ed1b24;
   margin-bottom: 1rem;
 }
 
 .download-stats .stats {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
 }
 
 .download-stats .stat-item {
   text-align: center;
-}
-
-.download-stats .stat-item img {
-  width: 50px;
-  height: auto;
-  margin-bottom: 0.5rem;
-  object-fit: contain; /* Ensures the image fits nicely without distortion */
+  width: 100%;
+  max-width: 200px;
 }
 
 .download-stats .stat-item p {
@@ -639,7 +632,6 @@ footer {
 }
 
 /* Terms of Service */
-
 .terms-of-service {
   margin-top: 2rem;
   padding: 2rem;
@@ -681,7 +673,6 @@ footer {
 }
 
 /* Cookies Policy */
-
 .cookies-policy {
   margin-top: 2rem;
   padding: 2rem;
@@ -764,5 +755,43 @@ footer {
   .footer-links {
     flex-direction: column;
     gap: 2px;
+  }
+
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .download-section {
+    max-width: 90%;
+  }
+
+  .download-stats {
+    max-width: 90%;
+  }
+
+  .download-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .download-card {
+    width: 90%;
+    max-width: 250px;
+  }
+
+  .download-stats .stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .download-stats .stat-item {
+    width: 90%;
+    max-width: 250px;
   }
 }
